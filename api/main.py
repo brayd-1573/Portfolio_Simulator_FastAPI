@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
-async def run_model():
+@app.get("/run/{strategy}")
+def run_model(strategy: str):
     # Placeholder for your model invocation logic
-    return {"Model results here"}
+    return {"strategy": strategy, "result": "Model results here"}
